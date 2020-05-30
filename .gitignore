@@ -28,3 +28,6 @@ yarn-error.log*
 # storybook
 .storybook
 /src/stories
+
+# environment variables
+.env
