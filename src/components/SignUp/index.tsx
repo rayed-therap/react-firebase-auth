@@ -1,12 +1,11 @@
 import React from "react";
 import SignUpForm from "./signup";
-import { stat } from "fs";
 
 const initialState = {
-  firstName: "",
-  lastName: "",
+  username: "",
   email: "",
   password: "",
+  confirmPassword: "",
   error: null,
 };
 
@@ -14,10 +13,10 @@ const SignUpPage = () => {
   const [state, setState] = React.useState(initialState);
 
   const isInvalid: boolean =
-    state.firstName === "" ||
-    state.lastName === "" ||
+    state.username === "" ||
     state.email === "" ||
-    state.password === "";
+    state.password === "" ||
+    state.confirmPassword === "";
 
   const onChange: React.ChangeEventHandler<HTMLInputElement> = (event) => {
     setState({
