@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useContext } from "react";
 import SignUpForm from "./signup";
+import { FirebaseContext } from "../Firebase";
 
 const initialState = {
   username: "",
@@ -10,6 +11,8 @@ const initialState = {
 };
 
 const SignUpPage = () => {
+  const firebase = useContext(FirebaseContext);
+
   const [state, setState] = React.useState(initialState);
 
   const isInvalid: boolean =
@@ -26,7 +29,10 @@ const SignUpPage = () => {
   };
 
   const onSubmit: React.ChangeEventHandler<HTMLFormElement> = (event) => {
-    console.log(event);
+    const email = "email";
+    const password = "pass";
+
+    firebase?.doCreateUserWithEmailAndPassword(email, password);
   };
 
   return (
