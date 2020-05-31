@@ -12,13 +12,14 @@ import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
+import * as ROUTES from "../../constants/routes";
 
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
       {"Copyright © "}
-      <Link color="inherit" href="https://material-ui.com/">
-        Your Website
+      <Link color="inherit" href={ROUTES.LANDING}>
+        Sector18
       </Link>{" "}
       {new Date().getFullYear()}
       {"."}
@@ -67,6 +68,7 @@ const SignUpForm = ({ handleSubmit, handleChange }: SignUpFormProps) => {
           <Grid container spacing={2}>
             <Grid item xs={12} sm={6}>
               <TextField
+                onChange={handleChange}
                 autoComplete="fname"
                 name="firstName"
                 variant="outlined"
@@ -79,6 +81,7 @@ const SignUpForm = ({ handleSubmit, handleChange }: SignUpFormProps) => {
             </Grid>
             <Grid item xs={12} sm={6}>
               <TextField
+                onChange={handleChange}
                 variant="outlined"
                 required
                 fullWidth
@@ -90,6 +93,7 @@ const SignUpForm = ({ handleSubmit, handleChange }: SignUpFormProps) => {
             </Grid>
             <Grid item xs={12}>
               <TextField
+                onChange={handleChange}
                 variant="outlined"
                 required
                 fullWidth
@@ -101,6 +105,7 @@ const SignUpForm = ({ handleSubmit, handleChange }: SignUpFormProps) => {
             </Grid>
             <Grid item xs={12}>
               <TextField
+                onChange={handleChange}
                 variant="outlined"
                 required
                 fullWidth
@@ -129,7 +134,7 @@ const SignUpForm = ({ handleSubmit, handleChange }: SignUpFormProps) => {
           </Button>
           <Grid container justify="flex-end">
             <Grid item>
-              <Link href="#" variant="body2">
+              <Link href={ROUTES.SIGN_IN} variant="body2">
                 Already have an account? Sign in
               </Link>
             </Grid>
