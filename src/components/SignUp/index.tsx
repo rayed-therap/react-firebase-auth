@@ -1,5 +1,6 @@
 import React from "react";
 import SignUpForm from "./signup";
+import { stat } from "fs";
 
 const initialState = {
   firstName: "",
@@ -11,6 +12,12 @@ const initialState = {
 
 const SignUpPage = () => {
   const [state, setState] = React.useState(initialState);
+
+  const isInvalid: boolean =
+    state.firstName === "" ||
+    state.lastName === "" ||
+    state.email === "" ||
+    state.password === "";
 
   const onChange: React.ChangeEventHandler<HTMLInputElement> = (event) => {
     setState({
@@ -24,7 +31,11 @@ const SignUpPage = () => {
   };
 
   return (
-    <SignUpForm handleSubmit={onSubmit} handleChange={onChange}></SignUpForm>
+    <SignUpForm
+      isInvalid={isInvalid}
+      handleSubmit={onSubmit}
+      handleChange={onChange}
+    ></SignUpForm>
   );
 };
 

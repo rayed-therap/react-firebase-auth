@@ -48,12 +48,16 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 type SignUpFormProps = {
+  isInvalid: boolean;
   handleSubmit: React.ChangeEventHandler<HTMLFormElement>;
   handleChange: React.ChangeEventHandler<HTMLInputElement>;
 };
-const SignUpForm = ({ handleSubmit, handleChange }: SignUpFormProps) => {
+const SignUpForm = ({
+  isInvalid,
+  handleSubmit,
+  handleChange,
+}: SignUpFormProps) => {
   const classes = useStyles();
-
   return (
     <Container component="main" maxWidth="xs">
       <CssBaseline />
@@ -129,6 +133,7 @@ const SignUpForm = ({ handleSubmit, handleChange }: SignUpFormProps) => {
             variant="contained"
             color="primary"
             className={classes.submit}
+            disabled={isInvalid}
           >
             Sign Up
           </Button>
