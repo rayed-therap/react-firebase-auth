@@ -71,6 +71,8 @@ const SignUpPage = () => {
   const history = useHistory();
 
   const onSubmit: React.ChangeEventHandler<HTMLFormElement> = (event) => {
+    event.preventDefault();
+
     firebase
       ?.doCreateUserWithEmailAndPassword(state.email, state.password)
       .then((authUser) => {
@@ -83,8 +85,6 @@ const SignUpPage = () => {
           error: error,
         });
       });
-
-    event.preventDefault();
   };
 
   return (
