@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import * as ROUTES from "../../constants/routes";
-import Header from "./navbar";
+import Header from "./header";
 
 const Navigation = () => {
   return (
