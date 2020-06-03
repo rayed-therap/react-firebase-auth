@@ -1,4 +1,5 @@
 import React, { useState, useContext } from "react";
+import { Link as RouterLink } from "react-router-dom";
 import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";
 import CssBaseline from "@material-ui/core/CssBaseline";
@@ -133,12 +134,16 @@ const SignInPage = () => {
           </Button>
           <Grid container>
             <Grid item xs>
-              <Link href="#" variant="body2">
+              <Link
+                component={RouterLink}
+                to={ROUTES.PASSWORD_FORGET}
+                variant="body2"
+              >
                 Forgot password?
               </Link>
             </Grid>
             <Grid item>
-              <Link href="#" variant="body2">
+              <Link component={RouterLink} to={ROUTES.SIGN_UP} variant="body2">
                 {"Don't have an account? Sign Up"}
               </Link>
             </Grid>
@@ -148,7 +153,7 @@ const SignInPage = () => {
       <Box mt={8}>
         <Typography variant="body2" color="textSecondary" align="center">
           {"Copyright © "}
-          <Link color="inherit" href="https://material-ui.com/">
+          <Link color="inherit" component={RouterLink} to={ROUTES.LANDING}>
             Your Website
           </Link>{" "}
           {new Date().getFullYear()}
