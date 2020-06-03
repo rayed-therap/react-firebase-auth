@@ -11,12 +11,13 @@ import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import * as ROUTES from "../../constants/routes";
+import { Link as RouterLink } from "react-router-dom";
 
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
       {"Copyright © "}
-      <Link color="inherit" href={ROUTES.LANDING}>
+      <Link color="inherit" component={RouterLink} to={ROUTES.LANDING}>
         Sector18
       </Link>{" "}
       {new Date().getFullYear()}
@@ -132,7 +133,7 @@ const SignUpForm = ({
           </Button>
           <Grid container justify="flex-end">
             <Grid item>
-              <Link href={ROUTES.SIGN_IN} variant="body2">
+              <Link variant="body2" component={RouterLink} to={ROUTES.SIGN_IN}>
                 Already have an account? Sign in
               </Link>
             </Grid>

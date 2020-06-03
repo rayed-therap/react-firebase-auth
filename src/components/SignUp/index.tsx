@@ -11,8 +11,6 @@ const initialState = {
 };
 
 const SignUpPage = () => {
-  const firebase = useContext(FirebaseContext);
-
   const [state, setState] = React.useState(initialState);
 
   const isInvalid: boolean =
@@ -27,6 +25,8 @@ const SignUpPage = () => {
       [event.target.name]: event.target.value,
     });
   };
+
+  const firebase = useContext(FirebaseContext);
 
   const onSubmit: React.ChangeEventHandler<HTMLFormElement> = (event) => {
     const email = "email";
