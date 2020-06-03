@@ -50,11 +50,13 @@ type SignUpFormProps = {
   isInvalid: boolean;
   handleSubmit: React.ChangeEventHandler<HTMLFormElement>;
   handleChange: React.ChangeEventHandler<HTMLInputElement>;
+  error: string | null;
 };
 const SignUpForm = ({
   isInvalid,
   handleSubmit,
   handleChange,
+  error,
 }: SignUpFormProps) => {
   const classes = useStyles();
   return (
@@ -67,6 +69,11 @@ const SignUpForm = ({
         <Typography component="h1" variant="h5">
           Sign up
         </Typography>
+        {error && (
+          <Typography component="p" variant="h2">
+            {error}
+          </Typography>
+        )}
         <form onSubmit={handleSubmit} className={classes.form} noValidate>
           <Grid container spacing={2}>
             <Grid item xs={12}>

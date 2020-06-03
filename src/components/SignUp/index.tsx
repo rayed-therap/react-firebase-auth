@@ -11,6 +11,8 @@ const initialState = {
 };
 
 const SignUpPage = () => {
+  let error = null;
+
   const [state, setState] = React.useState(initialState);
 
   const isInvalid: boolean =
@@ -40,6 +42,7 @@ const SignUpPage = () => {
       isInvalid={isInvalid}
       handleSubmit={onSubmit}
       handleChange={onChange}
+      error={error}
     ></SignUpForm>
   );
 };
