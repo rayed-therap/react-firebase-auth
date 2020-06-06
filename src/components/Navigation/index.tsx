@@ -1,13 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import * as ROUTES from "../../constants/routes";
 import Header from "./header";
 import SignOutButton from "../SignOut";
+import { AuthContext } from "../Session";
 
-type AuthUserProps = {
-  authUser: firebase.User | null;
-};
-const Navigation = ({ authUser }: AuthUserProps) => {
+const Navigation = () => {
+  const authUser = useContext(AuthContext);
   return (
     <div>
       <Header />
