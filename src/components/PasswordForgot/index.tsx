@@ -82,7 +82,7 @@ const PasswordForgotPage = () => {
           <LockOutlinedIcon />
         </Avatar>
         <Typography component="h1" variant="h5">
-          Sign in
+          Reset Password
         </Typography>
         {state.error && (
           <Typography component="p" variant="body1">

@@ -9,6 +9,7 @@ import AccountPage from "../Account";
 import HomePage from "../Home";
 import AdminPage from "../Admin";
 import PasswordForgotPage from "../PasswordForgot";
+import PasswordChangePage from "../PasswordChange";
 import { AuthProvider } from "../Session";
 import { FirebaseProvider } from "../Firebase";
 
@@ -30,6 +31,11 @@ const App = () => {
               exact
               path={ROUTES.PASSWORD_FORGOT}
               component={PasswordForgotPage}
+            />
+            <Route
+              exact
+              path={ROUTES.PASSWORD_CHANGE}
+              component={PasswordChangePage}
             />
           </Switch>
         </Router>
