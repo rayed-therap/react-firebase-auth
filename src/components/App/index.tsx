@@ -8,7 +8,7 @@ import SignInPage from "../SignIn";
 import AccountPage from "../Account";
 import HomePage from "../Home";
 import AdminPage from "../Admin";
-import PasswordForgetPage from "../PasswordForget";
+import PasswordForgotPage from "../PasswordForgot";
 import { AuthProvider } from "../Session";
 import { FirebaseProvider } from "../Firebase";
 
@@ -28,8 +28,8 @@ const App = () => {
             <Route exact path={ROUTES.ADMIN} component={AdminPage} />
             <Route
               exact
-              path={ROUTES.PASSWORD_FORGET}
-              component={PasswordForgetPage}
+              path={ROUTES.PASSWORD_FORGOT}
+              component={PasswordForgotPage}
             />
           </Switch>
         </Router>

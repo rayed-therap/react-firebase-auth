@@ -136,7 +136,7 @@ const SignInPage = () => {
             <Grid item xs>
               <Link
                 component={RouterLink}
-                to={ROUTES.PASSWORD_FORGET}
+                to={ROUTES.PASSWORD_FORGOT}
                 variant="body2"
               >
                 Forgot password?
@@ -154,7 +154,7 @@ const SignInPage = () => {
         <Typography variant="body2" color="textSecondary" align="center">
           {"Copyright © "}
           <Link color="inherit" component={RouterLink} to={ROUTES.LANDING}>
-            Your Website
+            Sector18
           </Link>{" "}
           {new Date().getFullYear()}
           {"."}
